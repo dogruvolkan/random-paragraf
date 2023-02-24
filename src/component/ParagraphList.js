@@ -4,12 +4,14 @@ import ParagraphShow from "./ParagraphShow";
 import { ParagraphContext } from "../context/ParagraphContext";
 
 const ParagraphList = () => {
-  const { word, setWords, showParagraph } = useContext(ParagraphContext);
+  const { word, showParagraph } = useContext(ParagraphContext);
 
   return (
-    <div>
+    <div className="card-list">
       {showParagraph
-        ? [...Array(+word)].map((x, i) => <ParagraphShow paragraf={Metin[i]} />)
+        ? [...Array(+word)].map((x, i) => (
+            <ParagraphShow key={i} paragraf={Metin[i]} />
+          ))
         : null}
     </div>
   );

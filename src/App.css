@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +12,11 @@
     align-items: flex-start;
     gap: 40px;
     padding: 40px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card-paragraph {
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +26,8 @@
     padding: 20px;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    position: sticky;
+    top: 40px;
 }
 
 .card-paragraph input {
@@ -38,7 +44,7 @@
 }
 
 .card-paragraph button {
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 4px;
     border: 1px solid #2F58CD;
     background-color: #2F58CD;
@@ -46,9 +52,113 @@
     cursor: pointer;
 }
 
+.card-list {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
 .card-show {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid black;
-    margin-bottom: 20px;
+    width: 48%;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+}
+
+.copy-btn:focus {
+    color: #6C00FF;
+    font-size: 19px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .App {
+        flex-direction: column;
+    }
+
+    .card-paragraph {
+        width: 100%;
+        position: static;
+    }
+
+    .card-list {
+        width: 100%;
+    }
+
+    .card-show {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .App {
+        flex-direction: column;
+    }
+
+    .card-paragraph {
+        width: 100%;
+        position: static;
+    }
+
+    .card-list {
+        width: 100%;
+    }
+
+    .card-show {
+        width: 48%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .App {
+        flex-direction: row;
+    }
+
+    .card-paragraph {
+        width: 50%;
+        position: sticky;
+        top: 40px;
+    }
+
+    .card-list {
+        width: 50%;
+    }
+
+    .card-show {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .App {
+        flex-direction: row;
+    }
+
+    .card-paragraph {
+        width: 35%;
+        position: sticky;
+        top: 40px;
+    }
+
+    .card-list {
+        width: 65%;
+    }
+
+    .card-show {
+        width: 48%;
+    }
 }
